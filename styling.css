@@ -1,0 +1,150 @@
+.container {
+  border: 1px solid #dadde1;
+  padding: 20px;
+  border-radius: 24px;
+  background: #cfe9ee;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: 0 auto;
+  width: 600px;
+  height: 400px;
+}
+.search-bar {
+  border: 1px solid #dadde1;
+  padding: 20px;
+  border-radius: 24px;
+  background: #cfe9ee;
+  display: flex;
+  align-items: center;
+  max-width: 600px;
+}
+.search-input {
+  flex: 1;
+  height: 52px;
+  border: none;
+  padding-left: 20px;
+  background: transparent;
+  outline: none;
+  border-radius: 24px;
+}
+.search-button {
+  background: #fff;
+  color: #007bff;
+  padding: 10px 20px;
+  border: 1px solid #dadde1;
+  border-radius: 24px;
+  cursor: pointer;
+}
+.country-selected {
+  font-family: 'Montserrat', sans-serif; 
+  font-size: 32px;
+  font-weight: 600;
+  margin: 15px 0;
+  text-align: center;
+}
+.current-weather-emoji {
+  font-size: 100px;
+  margin-right: 5px;
+  position: relative;
+  bottom: 130px;
+}
+.date-and-forecast {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+.date-and-forecast li {
+  margin: 0 15px;
+}
+.temperature h1 {
+  font-family: 'Montserrat', sans-serif; 
+  font-size: 64px;
+  font-weight: 700;
+  position: relative;
+  left: 420px;
+  bottom: 245px;
+}
+.humidity-wind {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+.humidity-wind li {
+  margin: 0 15px;
+  position: relative;
+  bottom: 220px;
+}
+.celcius {
+  margin-left: 10px;
+}
+.underline {
+  position: relative;
+  bottom: 220px;
+}
+.forecast-week {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  bottom: 220px;
+  left: -20px;
+}
+.mon {
+  list-style: none;
+  display: inline-block;
+  margin: 15px;
+}
+.mon:hover {
+  transition: 150ms ease-in-out;
+  transform: scale(1.1);
+  cursor: pointer;
+}
+.tue {
+  list-style: none;
+  display: inline-block;
+  margin: 15px;
+}
+.tue:hover {
+  transition: 150ms ease-in-out;
+  transform: scale(1.1);
+  cursor: pointer;
+}
+.wed {
+  list-style: none;
+  display: inline-block;
+  margin: 15px;
+}
+.wed:hover {
+  transition: 150ms ease-in-out;
+  transform: scale(1.1);
+  cursor: pointer;
+}
+.thu {
+  list-style: none;
+  display: inline-block;
+  margin: 15px;
+}
+.thu:hover {
+  transition: 150ms ease-in-out;
+  transform: scale(1.1);
+  cursor: pointer;
+}
+.fri {
+  list-style: none;
+  display: inline-block;
+  margin: 15px;
+}
+.fri:hover {
+  transition: 150ms ease-in-out;
+  transform: scale(1.1);
+  cursor: pointer;
+}
+.signature {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
