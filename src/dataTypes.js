@@ -22,10 +22,9 @@ let date = presentTime.getDate();
 let month = presentTime.getMonth();
 let year = presentTime.getFullYear();
 
-let days = ("Mon", "Tues", "Wed", "Thurs", "Fri", "Sat", "Sun");
+let days = ("Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat");
 let monthsOfYear =
-  ("Dec",
-  "Jan",
+  ("Jan",
   "Feb",
   "March",
   "Apr",
@@ -35,7 +34,8 @@ let monthsOfYear =
   "Aug",
   "Sep",
   "Oct",
-  "Nov");
+  "Nov",
+  "Dec");
 
 let formattedDay = day[days];
 
@@ -48,6 +48,18 @@ function displayTemp(response) {
 
   let temperature = Math.round(response.data.temperature.current);
   let cityChosen = response.data.city;
+
+  let descriptionElement = document.querySelector("#current-temp");
+  descriptionElement.innerHTML = response.data.condition.description;
+
+  let humidityElement = document.querySelector("#humidity");
+  humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
+
+  let windElement = document.querySelector("#wind");
+  windElement.innerHTML = `${response.data.wind.speed}km/h`;
+
+  let iconEmoji = document.querySelector("#api-icon-emoji");
+  iconEmoji.innerHTML = `<img src="${response.data.condition.icon_url}" class="current-weather-emoji" />`
 
   let headerElement = document.querySelector("#country-selected");
   headerElement.innerHTML = `${cityChosen}`;

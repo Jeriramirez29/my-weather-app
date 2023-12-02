@@ -37,8 +37,9 @@
             <li id="current-date">Sun 13, Oct 23</li>
             <li id="current-temp">Mostly sunny</li>
         </ul>
-        <div class="current-weather-emoji" id="apiIconEmoji">
-            ☁️
+        <div id="api-icon-emoji">
+            <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-day.png"
+            class="current-weather-emoji">
         </div>
         <div class="temperature">
             <h1 id="liveTemp">
@@ -46,8 +47,8 @@
             </h1>
         </div>
         <ul class="humidity-wind">
-            <li>Humidity: 82%</li>
-            <li>Wind: 0km/h</li>
+            <li>Humidity: <strong id="humidity"> </strong> </li>
+            <li>Wind: <strong id="wind"> </strong> </li>
         </ul>
         <hr class="underline">
         <div class="forecast-week">

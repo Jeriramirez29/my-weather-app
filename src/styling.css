@@ -43,9 +43,10 @@
 }
 .current-weather-emoji {
   font-size: 100px;
-  margin-right: 5px;
+  margin-right: 3px;
   position: relative;
-  bottom: 130px;
+  bottom: 110px;
+  left: 40px;
 }
 .date-and-forecast {
   list-style: none;
@@ -64,7 +65,7 @@
   font-weight: 700;
   position: relative;
   left: 420px;
-  bottom: 245px;
+  bottom: 200px;
 }
 .humidity-wind {
   list-style: none;
@@ -77,20 +78,21 @@
 .humidity-wind li {
   margin: 0 15px;
   position: relative;
-  bottom: 220px;
+  bottom: 180px;
+  left: 15px;
 }
 .celcius {
   margin-left: 10px;
 }
 .underline {
   position: relative;
-  bottom: 220px;
+  bottom: 170px;
 }
 .forecast-week {
   display: flex;
   justify-content: space-around;
   position: relative;
-  bottom: 220px;
+  bottom: 170px;
   left: -20px;
 }
 .mon {
