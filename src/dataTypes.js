@@ -41,6 +41,26 @@ let formattedDay = day[days];
 
 currentDate.innerHTML = `${days} ${date}, ${monthsOfYear} ${year}`;
 
+// Weather forecast
+function displayForecast() {
+
+  let days = ["Mon", "Tue", "Wed", "Thur", "Fri"];
+  let forecastHtml = "";
+
+  days.forEach(function(day) {
+    forecastHtml =
+    forecastHtml +
+    `
+    <ul class="mon">
+        <li>${day}</li>
+        <li>🌥️</li>
+    </ul>
+`;
+});
+let forecastElement = document.querySelector("#forecast");
+forecastElement.innerHTML = forecastHtml;
+}
+
 // API
 
 function displayTemp(response) {
@@ -68,6 +88,7 @@ function displayTemp(response) {
   temperatureElement.innerHTML = `${temperature}ºC`;
 }
 searchCity("Gibraltar");
+displayForecast();
 
 axios.get(apiUrl).then(displayTemp);
   
