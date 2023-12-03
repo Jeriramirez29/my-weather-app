@@ -22,7 +22,8 @@ let date = presentTime.getDate();
 let month = presentTime.getMonth();
 let year = presentTime.getFullYear();
 
-let days = ("Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat");
+let days = ("Mon", "Tues", "Wed", "Thurs", "Fri", "Sat", "Sun" );
+
 let monthsOfYear =
   ("Jan",
   "Feb",
@@ -42,7 +43,14 @@ let formattedDay = day[days];
 currentDate.innerHTML = `${days} ${date}, ${monthsOfYear} ${year}`;
 
 // Weather forecast
-function getForecast () {
+function formatDay(timestamp) {
+  let date = new Date (timestamp * 1000);
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
+
+  return days[date.getDay()];
+}
+
+function getForecast(city) {
   let apiKey = "0f467b61fd3fddobeaf80419at5186fc";
   let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
   axios(apiUrl).then(displayForecast);
@@ -52,19 +60,19 @@ function displayForecast(response) {
 
   let forecastHtml = "";
 
-  response.data.daily.forEach(function(day) {
+  response.data.daily.forEach(function(day, index) {
+    if (index < 5) {
     forecastHtml =
     forecastHtml +
     `
     <ul class="mon">
-        <li>Mon</li>
-        <li> 
-        <div class="weather-icon">
-        <img src="${day.condition.icon_url}" />
+        <li>${formatDay(day.time)}</li>
+        <li>
+        <img src="${day.condition.icon_url}" class="weather-icon" />
          </li>
-        </div>
     </ul>
 `;
+    }
 });
 let forecastElement = document.querySelector("#forecast");
 forecastElement.innerHTML = forecastHtml;
@@ -100,7 +108,3 @@ function displayTemp(response) {
 
 }
 searchCity("Gibraltar");
-displayForecast("Gibraltar");
-
-axios.get(apiUrl).then(displayTemp);
-  

@@ -95,7 +95,14 @@
   bottom: 170px;
   left: -20px;
 }
-.mon {
+
+.weather-icon {
+  width: 40px;
+  height: 40px;
+  display: block;
+  margin: 0 auto;
+}
+  .mon {
   list-style: none;
   display: inline-block;
   margin: 15px;
