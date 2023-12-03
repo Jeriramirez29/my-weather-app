@@ -50,16 +50,19 @@ function getForecast () {
 
 function displayForecast(response) {
 
-  let days = ["Mon", "Tue", "Wed", "Thur", "Fri"];
   let forecastHtml = "";
 
-  days.forEach(function(day) {
+  response.data.daily.forEach(function(day) {
     forecastHtml =
     forecastHtml +
     `
     <ul class="mon">
-        <li>${day}</li>
-        <li>🌥️</li>
+        <li>Mon</li>
+        <li> 
+        <div class="weather-icon">
+        <img src="${day.condition.icon_url}" />
+         </li>
+        </div>
     </ul>
 `;
 });
@@ -94,7 +97,7 @@ function displayTemp(response) {
   temperatureElement.innerHTML = `${temperature}ºC`;
 
   getForecast(response.data.city);
-  
+
 }
 searchCity("Gibraltar");
 displayForecast("Gibraltar");
