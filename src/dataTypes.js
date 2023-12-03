@@ -42,7 +42,13 @@ let formattedDay = day[days];
 currentDate.innerHTML = `${days} ${date}, ${monthsOfYear} ${year}`;
 
 // Weather forecast
-function displayForecast() {
+function getForecast () {
+  let apiKey = "0f467b61fd3fddobeaf80419at5186fc";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+  axios(apiUrl).then(displayForecast);
+}
+
+function displayForecast(response) {
 
   let days = ["Mon", "Tue", "Wed", "Thur", "Fri"];
   let forecastHtml = "";
@@ -80,15 +86,18 @@ function displayTemp(response) {
 
   let iconEmoji = document.querySelector("#api-icon-emoji");
   iconEmoji.innerHTML = `<img src="${response.data.condition.icon_url}" class="current-weather-emoji" />`
-
+  
   let headerElement = document.querySelector("#country-selected");
   headerElement.innerHTML = `${cityChosen}`;
 
   let temperatureElement = document.querySelector("#liveTemp");
   temperatureElement.innerHTML = `${temperature}ºC`;
+
+  getForecast(response.data.city);
+  
 }
 searchCity("Gibraltar");
-displayForecast();
+displayForecast("Gibraltar");
 
 axios.get(apiUrl).then(displayTemp);
   
